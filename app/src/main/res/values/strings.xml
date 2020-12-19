@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Demo- LeanAgri</string>
+    <string name="headline">Movies</string>
+
+    <string name="release">Release %s</string>
+    <string name="hour_and_min">%1dh %1dm</string>
+
+
+</resources>

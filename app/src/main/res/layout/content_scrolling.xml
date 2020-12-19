@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="movie"
+            type="com.demo.leanagri.data.model.detail.MovieDetail" />
+    </data>
+<androidx.core.widget.NestedScrollView
+    android:id="@+id/scrollable"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    bind:layout_behavior="@string/appbar_scrolling_view_behavior"
+   >
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/margin_2x">
+
+        <TextView
+            android:id="@+id/tv_duration"
+            style="@style/Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            bind:duration="@{movie.runtime}"
+            bind:layout_constraintStart_toStartOf="parent"
+            bind:layout_constraintTop_toTopOf="parent"
+            tools:text="1h 30min" />
+
+        <TextView
+            android:id="@+id/tv_duration_desc"
+            style="@style/Title.Desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Duration"
+            bind:layout_constraintStart_toStartOf="parent"
+            bind:layout_constraintTop_toBottomOf="@id/tv_duration" />
+
+        <TextView
+            android:id="@+id/tv_release_date"
+            style="@style/Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            bind:date="@{movie.releaseDate}"
+            bind:layout_constraintLeft_toLeftOf="parent"
+            bind:layout_constraintRight_toRightOf="parent"
+            bind:layout_constraintTop_toTopOf="parent"
+            tools:text="10 Aug 2019" />
+
+        <TextView
+            android:id="@+id/textView4"
+            style="@style/Title.Desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Release"
+            bind:layout_constraintLeft_toLeftOf="parent"
+            bind:layout_constraintRight_toRightOf="parent"
+            bind:layout_constraintTop_toBottomOf="@id/tv_release_date" />
+
+        <TextView
+            android:id="@+id/tv_vote"
+            style="@style/Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:text="@{movie.voteCount.toString()}"
+            bind:layout_constraintEnd_toEndOf="parent"
+            bind:layout_constraintTop_toTopOf="parent"
+            tools:text="43" />
+
+        <TextView
+            android:id="@+id/textView5"
+            style="@style/Title.Desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Votes"
+            bind:layout_constraintEnd_toEndOf="parent"
+            bind:layout_constraintTop_toBottomOf="@id/tv_vote" />
+
+
+        <TextView
+            android:id="@+id/tv_synopsis"
+            style="@style/Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="Synopsis"
+            bind:layout_constraintStart_toStartOf="parent"
+            bind:layout_constraintTop_toBottomOf="@id/tv_duration_desc" />
+
+        <TextView
+            android:id="@+id/tv_synopsis_desc"
+            style="@style/Title.Desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{movie.overview}"
+            bind:layout_constraintStart_toStartOf="parent"
+            bind:layout_constraintTop_toBottomOf="@id/tv_synopsis"
+            tools:text="1h 30min" />
+
+        <TextView
+            android:id="@+id/tv_tag_line"
+            style="@style/Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="Tag Line"
+            bind:layout_constraintStart_toStartOf="parent"
+            bind:layout_constraintTop_toBottomOf="@id/tv_synopsis_desc" />
+
+        <TextView
+            android:id="@+id/tv_tag_line_desc"
+            style="@style/Title.Desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{movie.tagline}"
+            bind:layout_constraintStart_toStartOf="parent"
+            bind:layout_constraintTop_toBottomOf="@id/tv_tag_line"
+            tools:text="TagLine" />
+
+
+        <TextView
+            android:id="@+id/tv_spoken_language"
+            style="@style/Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="Spoken Language"
+            bind:layout_constraintStart_toStartOf="parent"
+            bind:layout_constraintTop_toBottomOf="@id/tv_tag_line_desc" />
+
+        <TextView
+            android:id="@+id/tv_spoken_language_desc"
+            style="@style/Title.Desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            bind:layout_constraintStart_toStartOf="parent"
+            bind:layout_constraintTop_toBottomOf="@id/tv_spoken_language"
+            bind:toSpokenLangData="@{movie.spokenLanguages}"
+            tools:text="En, Hi" />
+
+
+        <TextView
+            android:id="@+id/tv_prod_companies"
+            style="@style/Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="Production Companies"
+            bind:layout_constraintStart_toStartOf="parent"
+            bind:layout_constraintTop_toBottomOf="@id/tv_spoken_language_desc" />
+
+        <TextView
+            android:id="@+id/tv_prod_companies_desc"
+            style="@style/Title.Desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            bind:layout_constraintStart_toStartOf="parent"
+            bind:layout_constraintTop_toBottomOf="@id/tv_prod_companies"
+            bind:toCompanyData="@{movie.productionCompanies}"
+            tools:text="En, Hi" />
+
+
+        <TextView
+            android:id="@+id/tv_prod_countries"
+            style="@style/Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="Production Countries"
+            bind:layout_constraintStart_toStartOf="parent"
+            bind:layout_constraintTop_toBottomOf="@id/tv_prod_companies_desc" />
+
+        <TextView
+            android:id="@+id/tv_prod_countries_desc"
+            style="@style/Title.Desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            bind:layout_constraintStart_toStartOf="parent"
+            bind:layout_constraintTop_toBottomOf="@id/tv_prod_countries"
+            bind:toSpokenLangData="@{movie.productionCountries}"
+            tools:text="En, Hi" />
+
+        <TextView
+            android:id="@+id/tv_prod_gene"
+            style="@style/Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="Genre"
+            bind:layout_constraintStart_toStartOf="parent"
+            bind:layout_constraintTop_toBottomOf="@id/tv_prod_countries_desc" />
+
+        <TextView
+            android:id="@+id/tv_prod_gene_desc"
+            style="@style/Title.Desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            bind:layout_constraintStart_toStartOf="parent"
+            bind:layout_constraintTop_toBottomOf="@id/tv_prod_gene"
+            bind:toSpokenLangData="@{movie.genres}"
+            tools:text="En, Hi" />
+
+        <TextView
+            android:id="@+id/tv_revenue"
+            style="@style/Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="revenue"
+            bind:layout_constraintStart_toStartOf="parent"
+            bind:layout_constraintTop_toBottomOf="@id/tv_prod_gene_desc" />
+
+        <TextView
+            android:id="@+id/textView6"
+            style="@style/Title.Desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{movie.revenue.toString()}"
+            bind:layout_constraintStart_toStartOf="parent"
+            bind:layout_constraintTop_toBottomOf="@id/tv_revenue"
+            tools:text="En, Hi" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
+</layout>

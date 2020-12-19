@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margin_1x">12dp</dimen>
+    <dimen name="margin_1_5x">16dp</dimen>
+    <dimen name="margin_2x">24dp</dimen>
+    <dimen name="margin_3x">42dp</dimen>
+    <dimen name="margin_4x">64dp</dimen>
+
+    <dimen name="font_small">12sp</dimen>
+    <dimen name="font_medium">18sp</dimen>
+    <dimen name="font_medium_2x">22sp</dimen>
+    <dimen name="font_large">29sp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="text_margin">16dp</dimen>
+
+</resources>

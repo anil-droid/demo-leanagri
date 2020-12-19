@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="movie"
+            type="com.demo.leanagri.data.model.detail.MovieDetail" />
+
+
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/motionLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="false">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:foreground="@drawable/forground_view"
+            android:scaleType="centerCrop"
+            android:src="@drawable/placeholder"
+            app:imageUrlOriginal="@{movie.backdropPath}" />
+
+                <com.google.android.material.appbar.AppBarLayout
+                    android:id="@+id/app_bar"
+                    android:layout_width="match_parent"
+                    android:layout_height="380dp"
+                    android:background="@android:color/transparent"
+                    android:theme="@style/AppTheme.AppBarOverlay">
+
+                    <include
+                        layout="@layout/movie_detail_header"
+                        app:movie="@{movie}" />
+
+                </com.google.android.material.appbar.AppBarLayout>
+
+                <include
+                    layout="@layout/content_scrolling"
+                    app:movie="@{movie}" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>
